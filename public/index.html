@@ -24,6 +24,10 @@
     </button>
 
     <script>
+        let url = (window.location.hostname.includes('localhost')) ?
+            'http://localhost:8081/api/auth/google' :
+            'https://api-rest-server-nodejs.herokuapp.com/api/auth/google'
+
         function handleCredentialResponse(response) {
             console.log('id token', response.credential)
             const body = {
